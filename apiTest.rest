@@ -1,0 +1,62 @@
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1Mjc4MDI4MGY5NDI5NTI0ZTMxNjI4ZiIsImlhdCI6MTY5Nzk0NjUwNiwiZXhwIjoxNjk4MDMyOTA2fQ.tV51Vg47jrQkEoy94zD5lZvfFLsKEBWVUDLnw9eTNfI
+
+### REGISTER
+POST http://0.0.0.0:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "name": "GMN",
+  "password": "123456",
+  "email": "gmn@gmail.com"
+}
+
+### LOGIN
+POST http://0.0.0.0:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "gmn@gmail.com",
+  "password": "123456"
+}
+
+### GET USER
+GET http://0.0.0.0:3000/api/v1/users/652780280f9429524e31628f
+Authorization: {{token}}
+
+### UPDATE USER
+PUT http://0.0.0.0:3000/api/v1/users/652780280f9429524e31628f
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "name": "Nhat",
+  "lastName": "Giang",
+  "location": "United State"
+}
+### CREATE JOB
+POST  http://0.0.0.0:3000/api/v1/jobs
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "company": "TMA Solution",
+  "position": "Back-end developer",
+  "workLocation": "Binh Thanh dist, HoChiMinh city",
+  "workType": "part-time"
+}
+### GET JOB
+GET http://0.0.0.0:3000/api/v1/jobs/652fe054fe3b8d5cd80c6d8c
+Authorization: {{token}}
+### GET ALL JOBS
+GET http://0.0.0.0:3000/api/v1/jobs
+Authorization: {{token}}
+
+### UPDATE JOB
+PATCH http://0.0.0.0:3000/api/v1/jobs/update/652fde9e6f6af551b0f65b18
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "company": "Tamarine",
+  "position": "Sr Front-end Developer"
+}
